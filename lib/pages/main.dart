@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
 
 import 'package:myapp/pages/login.dart';
 

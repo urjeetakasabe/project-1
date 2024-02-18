@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/rendering.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:myapp/components/my_button.dart';
 import 'package:myapp/components/my_textfied.dart';
 
@@ -18,6 +19,29 @@ class myLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: Container(
+          color: Color.fromARGB(255, 50, 51, 57),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+            child: GNav(
+              backgroundColor: Color.fromARGB(255, 50, 51, 57),
+              color: Colors.white,
+              activeColor: Colors.white,
+              tabBackgroundColor: const Color.fromARGB(255, 32, 32, 32),
+              gap: 8,
+              onTabChange: (index) {
+                print(index);
+              },
+              padding: EdgeInsets.all(18),
+              tabs: [
+                GButton(
+                  icon: Icons.home,
+                  text: 'home',
+                ),
+              ],
+            ),
+          ),
+        ),
         backgroundColor: Color.fromARGB(255, 8, 6, 6),
         body: SafeArea(
             child: Column(children: [
@@ -29,7 +53,7 @@ class myLogin extends StatelessWidget {
               height: 100,
             ),
           ]),
-          SizedBox(height: 30),
+          SizedBox(height: 25),
           //welcome back,you've been missed
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             Padding(
